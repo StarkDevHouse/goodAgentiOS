@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var sideMenu: UIView!
     @IBOutlet weak var darkenBox: UIImageView!
+    @IBOutlet weak var agentWrapper: UIScrollView!
+    // @IBOutlet weak var mapScreen: MKMapView!
     
     
     
@@ -43,7 +45,7 @@ class ViewController: UIViewController {
                 self.sideMenu.frame = CGRect(x: Xpos, y: Ypos, width: width, height: height)
             }
             UIView.animate(withDuration: 0.3) {
-                self.darkenBox.viewWithTag(1)?.accessibilityElementsHidden = true
+                self.darkenBox.isHidden = false
             }
         } else {
             let Xpos = sideMenu.frame.origin.x - 300
@@ -57,13 +59,14 @@ class ViewController: UIViewController {
             }
             
             UIView.animate(withDuration: 0.3) {
-                self.darkenBox.viewWithTag(1)?.accessibilityElementsHidden = false
+                self.darkenBox.isHidden = true
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.darkenBox.isHidden = true
         // Do any additional setup after loading the view, typically from a nib.
     }
 
