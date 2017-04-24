@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3636FE9EA3906925389C9B8BB66E67E404765857",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "827B9A17051ED52C055D3E19AAFA85F06B5846FB" : 9223372036854775807,
+    "3636FE9EA3906925389C9B8BB66E67E404765857" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4D82F771-0B23-4A98-8ACF-43BC90CF78D6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "827B9A17051ED52C055D3E19AAFA85F06B5846FB" : "..",
+    "3636FE9EA3906925389C9B8BB66E67E404765857" : "goodAgentiOS\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "goodAgentiOS",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "goodAgentiOS.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/StarkDevHouse\/goodAgentiOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3636FE9EA3906925389C9B8BB66E67E404765857"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/starkhouse\/goodAgent.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "827B9A17051ED52C055D3E19AAFA85F06B5846FB"
+    }
+  ]
+}

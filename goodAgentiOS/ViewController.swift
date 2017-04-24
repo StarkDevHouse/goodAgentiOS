@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var sideMenu: UIView!
     @IBOutlet weak var darkenBox: UIImageView!
     @IBOutlet weak var agentWrapper: UIScrollView!
-    // @IBOutlet weak var mapScreen: MKMapView!
     
     
     
