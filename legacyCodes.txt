@@ -1,0 +1,157 @@
+//
+//  legacyCodes.swift
+//  goodAgentiOS
+//
+//  Created by Junmo Kang on 25/04/2017.
+//  Copyright © 2017 Kalabash Inc. All rights reserved.
+//
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+// MARK: - Legacy
+
+    @IBAction func menuButton(_ sender: UIButton) {
+        if (sideMenu.frame.origin.x < 0) {
+            moveMenu(Bool: true)
+        } else {
+            moveMenu(Bool: false)
+        }
+    }
+
+    @IBAction func hideMenuButton(_ sender: UIButton) {
+        moveMenu(Bool: false)
+    }
+
+    func moveMenu(Bool: Bool) {
+        if (Bool == true) {
+            let Xpos = sideMenu.frame.origin.x + 300
+            let Ypos = sideMenu.frame.origin.y
+
+            let height = sideMenu.frame.size.height
+            let width = sideMenu.frame.size.width
+
+            UIView.animate(withDuration: 0.3) {
+                self.sideMenu.frame = CGRect(x: Xpos, y: Ypos, width: width, height: height)
+            }
+            UIView.animate(withDuration: 0.3) {
+                self.darkenBox.isHidden = false
+            }
+        } else {
+            let Xpos = sideMenu.frame.origin.x - 300
+            let Ypos = sideMenu.frame.origin.y
+
+            let height = sideMenu.frame.size.height
+            let width = sideMenu.frame.size.width
+
+            UIView.animate(withDuration: 0.3) {
+                self.sideMenu.frame = CGRect(x: Xpos, y: Ypos, width: width, height: height)
+            }
+
+            UIView.animate(withDuration: 0.3) {
+                self.darkenBox.isHidden = true
+            }
+        }
+    }
+    func setSidebar() {
+        let sideView = SideBar.instanceFromNib()
+        sideView.frame = self.view.frame
+        self.view.addSubview(sideView)
+    }
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    
+    //        self.setSidebar()
+    
+    
+    //         self.darkenBox.isHidden = true
+    //         Do any additional setup after loading the view, typically from a nib.
+}
+
+// Mark: - search
+
+func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+}
+
+
+func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // Meaning searching is on, then it's count searching array
+    if searching == true {
+        return searchingDataArray.count
+    } else {
+        return originalArray.count
+    }
+}
+
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    
+    if searching == true {
+        cell.textLabel?.text = searchingDataArray[indexPath.row]
+    } else {
+        cell.textLabel?.text = originalArray[indexPath.row]
+    }
+    
+    return cell
+}
+
+func searchBar(_ seachBar: UISearchBar, textDidChange searchText: String) {
+    searchingDataArray = originalArray.filter({ (text) -> Bool in
+        let tmp: NSString = text as NSString
+        let range = tmp.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
+        return range.location != NSNotFound
+    })
+    
+    if(searchingDataArray.count == 0) {
+        searching = false
+    } else {
+        searching = true
+    }
+    self.tableView.reloadData()
+}
+
+// MARK: - Search II
+
+func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
+filtered = data.filter({ (text) -> Bool in
+let tmp: NSString = text as NSString
+let range = tmp.range(of: text, options: NSString.CompareOptions.caseInsensitive)
+return range.location != NSNotFound
+})
+
+if (filtered.count == 0){
+searchActive = false
+} else {
+searchActive = true
+}
+self.tableView.reloadData()
+}
+
+func numberOfSections(in tableView: UITableView) -> Int {
+return 1
+}
+
+func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+if searchActive == true {
+return filtered.count
+} else {
+return data.count
+}
+}
+
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+if searchActive == true {
+cell.textLabel?.text = filtered[indexPath.row]
+} else {
+cell.textLabel?.text = data[indexPath.row]
+}
+
+return cell;
+}

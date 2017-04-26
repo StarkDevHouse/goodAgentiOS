@@ -12,77 +12,75 @@ import UIKit
 class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     //MARK: - Properties
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var originalArray:[String] = []
-    var searchingDataArray:[String] = []
-    var searching: Bool! = false
-    
-    
-
-    
+    var data = ["San Francisco","New York","San Jose","Chicago","Los Angeles","Austin","Seattle"]
+    var searchActive: Bool! = false
+    var filtered:[String] = []
     
     //MARK: - Action: Call SideBar
     
     @IBAction func CallSideBar(_ sender: Any) {
 
         let uvc = self.storyboard!.instantiateViewController(withIdentifier: "SideBarViewController")
-        uvc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        self.present(uvc, animated: true)
+        // uvc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        self.present(uvc, animated: false)
 
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        originalArray = ["index", "Vivo", "Micromax", "Sony", "Motorola"]
+        
+        // Setup delegates
+        tableView.delegate = self
+        tableView.dataSource = self
+        searchBar.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Meaning searching is on, then it's count searching array
-        if searching == true {
-            return searchingDataArray.count
-        } else {
-            return originalArray.count
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        if searching == true {
-            cell.textLabel?.text = searchingDataArray[indexPath.row]
-        } else {
-            cell.textLabel?.text = originalArray[indexPath.row]
-        }
-        
-        return cell
-    }
-    
-    func searchBar(_ seachBar: UISearchBar, textDidChange searchText: String) {
-        searchingDataArray = originalArray.filter({ (text) -> Bool in
-            let tmp: NSString = text as NSString
-            let range = tmp.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
-            return range.location != NSNotFound
-        })
-        
-        if(searchingDataArray.count == 0) {
-            searching = false
-        } else {
-            searching = true
-        }
-        self.tableView.reloadData()
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    // MARK: - Table View from data source
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchActive = true
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchActive = false
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
+        cell.textLabel?.text = filtered[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filtered.count
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filtered = searchText.isEmpty ? data: data.filter{(item: String) -> Bool in
+            return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+    }
+
+
+
 
 }
