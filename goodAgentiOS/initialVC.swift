@@ -16,10 +16,10 @@ class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var searchActive : Bool = false
     var data = ["San Francisco","New York","San Jose","Chicago","Los Angeles","Austin","Seattle"]
-    var searchActive: Bool! = false
     var filtered:[String] = []
-    
+
     //MARK: - Action: Call SideBar
     
     @IBAction func CallSideBar(_ sender: Any) {
@@ -64,23 +64,37 @@ class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         searchActive = false
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filtered = data.filter({ (text) -> Bool in
+            let tmp: NSString = text as NSString
+            let range = tmp.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
+            return range.location != NSNotFound
+        })
+        
+        if (filtered.count == 0) {
+            searchActive = false;
+        } else {
+            searchActive = true;
+        }
+        self.tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
-        cell.textLabel?.text = filtered[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        if(searchActive) {
+            cell.textLabel?.text = filtered[indexPath.row]
+        } else {
+            cell.textLabel?.text = data[indexPath.row]
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filtered.count
-    }
-
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filtered = searchText.isEmpty ? data: data.filter{(item: String) -> Bool in
-            return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        if(searchActive) {
+            return filtered.count
         }
+        return data.count
     }
-
-
-
 
 }

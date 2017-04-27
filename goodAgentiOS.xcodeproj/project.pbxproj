@@ -41,6 +41,8 @@
 		F91DC8B61EA9899F00D60334 /* goodAgentiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodAgentiOSTests.swift; sourceTree = "<group>"; };
 		F91DC8B81EA9899F00D60334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F95B4E901EAEF25500547200 /* legacyCodes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = legacyCodes.txt; path = ../legacyCodes.txt; sourceTree = "<group>"; };
+		F96614931EB1BCB900FBA83F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		F96614941EB1BCB900FBA83F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F9BD43B91EADF83700C3547B /* SideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
 		F9BD43BB1EADF85600C3547B /* SideBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideBar.xib; sourceTree = "<group>"; };
 		F9BD43BD1EAE013300C3547B /* SideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F91DC8A61EA9899F00D60334 /* Base */,
+				F96614931EB1BCB900FBA83F /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F91DC8AB1EA9899F00D60334 /* Base */,
+				F96614941EB1BCB900FBA83F /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -264,6 +268,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -314,6 +319,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -356,7 +362,6 @@
 		F91DC8BC1EA9899F00D60334 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9BZEF6TDE4;
 				INFOPLIST_FILE = goodAgentiOS/Info.plist;
@@ -371,7 +376,6 @@
 		F91DC8BD1EA9899F00D60334 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9BZEF6TDE4;
 				INFOPLIST_FILE = goodAgentiOS/Info.plist;
