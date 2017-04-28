@@ -16,7 +16,8 @@ class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var map: UIView!
+//    @IBOutlet weak var map: UIView!
+
     
     
     var searchController:UISearchController!
@@ -38,42 +39,51 @@ class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     //MARK: - Load GoogleMap
     
     override func loadView() {
-        let camera = GMSCameraPosition.camera(withLatitude: 37.5466822, longitude: 127.0501807, zoom: 15)
-        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
-        mapView.isMyLocationEnabled = true
-        
-        self.view = mapView
-
-        
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: HQpos[0], longitude: HQpos[1])
-        marker.title = "6G HQ"
-        marker.snippet = "SeongDong"
-        marker.map = mapView
-        
-        
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Setup delegates
-        if (tableView != nil) {
-            self.tableView.delegate = self
-            self.tableView.delegate = self
-            self.tableView.dataSource = self
-        }
+        configureSearchController()
+//        self.searchBar = UISearchBar(frame: CGRect.init(x: 15, y: 20, width: 250, height: 44))
+//        self.searchBar.delegate = self
+//        
         
-        if (searchBar != nil) {
-            self.searchBar.delegate = self
-            self.view.addSubview(searchBar)
-            // Customzing searchBar
-            self.searchBar.layer.cornerRadius = 0
-
-        } else {
-            print("no search bar")
-        }
+//        tableView.delegate = self
+//        tableView.delegate = self
+//        tableView.dataSource = self
+//        
+        
+        let camera = GMSCameraPosition.camera(withLatitude: HQpos[0], longitude: HQpos[1], zoom: 15)
+        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+        mapView.isMyLocationEnabled = true
+        mapView.accessibilityElementsHidden = false
+        
+        // self.view = mapView
+        // self.map = mapView
+//
+//        let marker = GMSMarker()
+//        marker.position = CLLocationCoordinate2D(latitude: HQpos[0], longitude: HQpos[1])
+//        marker.title = "6G HQ"
+//        marker.snippet = "SeongDong"
+//        marker.map = mapView
+        
+        
+        // Setup delegates
+//        if (tableView != nil) {
+//            
+//        }
+        
+        
+        // self.view.addSubview(searchBar)
+        //self.searchBar.layer.cornerRadius = 0
+        
+//        if (searchBar != nil) {
+//            
+//
+//        } else {
+//            print("no search bar")
+//        }
         
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -85,7 +95,16 @@ class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     }
     
     
-    // MARK: - Table View from data source
+    // MARK: - search Ctrl.
+    func configureSearchController() {
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self as? UISearchResultsUpdating
+        searchController.dimsBackgroundDuringPresentation = true
+        searchController.searchBar.delegate = self
+    }
+    
+    
+    // MARK: - Search Bar and Table View
 
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchActive = true
