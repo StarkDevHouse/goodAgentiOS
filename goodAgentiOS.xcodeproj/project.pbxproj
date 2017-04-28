@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D6B6E52ABDE2E9919EF0D08 /* libPods-goodAgentiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA3FBA5E06730989E5B6F66 /* libPods-goodAgentiOS.a */; };
 		F91DC8A21EA9899F00D60334 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DC8A11EA9899F00D60334 /* AppDelegate.swift */; };
 		F91DC8A41EA9899F00D60334 /* initialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DC8A31EA9899F00D60334 /* initialVC.swift */; };
 		F91DC8A71EA9899F00D60334 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91DC8A51EA9899F00D60334 /* Main.storyboard */; };
 		F91DC8A91EA9899F00D60334 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F91DC8A81EA9899F00D60334 /* Assets.xcassets */; };
 		F91DC8AC1EA9899F00D60334 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91DC8AA1EA9899F00D60334 /* LaunchScreen.storyboard */; };
 		F91DC8B71EA9899F00D60334 /* goodAgentiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DC8B61EA9899F00D60334 /* goodAgentiOSTests.swift */; };
+		F956A4F81EB1CD1800920327 /* searchBar2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F956A4F71EB1CD1800920327 /* searchBar2.swift */; };
+		F956A4FA1EB1D92C00920327 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F956A4F91EB1D92C00920327 /* Podfile */; };
 		F95B4E911EAEF25500547200 /* legacyCodes.txt in Sources */ = {isa = PBXBuildFile; fileRef = F95B4E901EAEF25500547200 /* legacyCodes.txt */; };
+		F96A98F01EB2EEFB00893009 /* MainSearchBarViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96A98EF1EB2EEFB00893009 /* MainSearchBarViewViewController.swift */; };
 		F9BD43BA1EADF83700C3547B /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BD43B91EADF83700C3547B /* SideBar.swift */; };
 		F9BD43BC1EADF85600C3547B /* SideBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9BD43BB1EADF85600C3547B /* SideBar.xib */; };
 		F9BD43BE1EAE013300C3547B /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BD43BD1EAE013300C3547B /* SideBarViewController.swift */; };
@@ -30,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		413A027FD2E46CA6A001BFE0 /* Pods-goodAgentiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goodAgentiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-goodAgentiOS/Pods-goodAgentiOS.debug.xcconfig"; sourceTree = "<group>"; };
+		98683D1CE48CDCBBCA3AC261 /* Pods-goodAgentiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goodAgentiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-goodAgentiOS/Pods-goodAgentiOS.release.xcconfig"; sourceTree = "<group>"; };
+		EDA3FBA5E06730989E5B6F66 /* libPods-goodAgentiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-goodAgentiOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91DC89E1EA9899F00D60334 /* goodAgentiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goodAgentiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91DC8A11EA9899F00D60334 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F91DC8A31EA9899F00D60334 /* initialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialVC.swift; sourceTree = "<group>"; };
@@ -40,9 +47,12 @@
 		F91DC8B21EA9899F00D60334 /* goodAgentiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = goodAgentiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91DC8B61EA9899F00D60334 /* goodAgentiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodAgentiOSTests.swift; sourceTree = "<group>"; };
 		F91DC8B81EA9899F00D60334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F956A4F71EB1CD1800920327 /* searchBar2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchBar2.swift; sourceTree = "<group>"; };
+		F956A4F91EB1D92C00920327 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		F95B4E901EAEF25500547200 /* legacyCodes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = legacyCodes.txt; path = ../legacyCodes.txt; sourceTree = "<group>"; };
 		F96614931EB1BCB900FBA83F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		F96614941EB1BCB900FBA83F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F96A98EF1EB2EEFB00893009 /* MainSearchBarViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSearchBarViewViewController.swift; sourceTree = "<group>"; };
 		F9BD43B91EADF83700C3547B /* SideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
 		F9BD43BB1EADF85600C3547B /* SideBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideBar.xib; sourceTree = "<group>"; };
 		F9BD43BD1EAE013300C3547B /* SideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D6B6E52ABDE2E9919EF0D08 /* libPods-goodAgentiOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +77,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA0F7EE1D511DE8FE1F641BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				413A027FD2E46CA6A001BFE0 /* Pods-goodAgentiOS.debug.xcconfig */,
+				98683D1CE48CDCBBCA3AC261 /* Pods-goodAgentiOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AC1984F831998DB9E402A2CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDA3FBA5E06730989E5B6F66 /* libPods-goodAgentiOS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F91DC8951EA9899F00D60334 = {
 			isa = PBXGroup;
 			children = (
 				F91DC8A01EA9899F00D60334 /* goodAgentiOS */,
 				F91DC8B51EA9899F00D60334 /* goodAgentiOSTests */,
 				F91DC89F1EA9899F00D60334 /* Products */,
+				AA0F7EE1D511DE8FE1F641BF /* Pods */,
+				AC1984F831998DB9E402A2CE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,15 +118,18 @@
 			isa = PBXGroup;
 			children = (
 				F91DC8A11EA9899F00D60334 /* AppDelegate.swift */,
-				F91DC8A31EA9899F00D60334 /* initialVC.swift */,
 				F91DC8A51EA9899F00D60334 /* Main.storyboard */,
+				F91DC8A31EA9899F00D60334 /* initialVC.swift */,
 				F9BD43BD1EAE013300C3547B /* SideBarViewController.swift */,
+				F96A98EF1EB2EEFB00893009 /* MainSearchBarViewViewController.swift */,
 				F91DC8A81EA9899F00D60334 /* Assets.xcassets */,
 				F91DC8AA1EA9899F00D60334 /* LaunchScreen.storyboard */,
+				F91DC8AD1EA9899F00D60334 /* Info.plist */,
+				F956A4F71EB1CD1800920327 /* searchBar2.swift */,
+				F95B4E901EAEF25500547200 /* legacyCodes.txt */,
 				F9BD43BB1EADF85600C3547B /* SideBar.xib */,
 				F9BD43B91EADF83700C3547B /* SideBar.swift */,
-				F95B4E901EAEF25500547200 /* legacyCodes.txt */,
-				F91DC8AD1EA9899F00D60334 /* Info.plist */,
+				F956A4F91EB1D92C00920327 /* Podfile */,
 			);
 			path = goodAgentiOS;
 			sourceTree = "<group>";
@@ -117,9 +150,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F91DC8BB1EA9899F00D60334 /* Build configuration list for PBXNativeTarget "goodAgentiOS" */;
 			buildPhases = (
+				3BA24F9DF040D94FFA1BF729 /* [CP] Check Pods Manifest.lock */,
 				F91DC89A1EA9899F00D60334 /* Sources */,
 				F91DC89B1EA9899F00D60334 /* Frameworks */,
 				F91DC89C1EA9899F00D60334 /* Resources */,
+				B9C2B57078E178022C788533 /* [CP] Embed Pods Frameworks */,
+				494292F4B8152E99EE9A622D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F956A4FA1EB1D92C00920327 /* Podfile in Resources */,
 				F91DC8AC1EA9899F00D60334 /* LaunchScreen.storyboard in Resources */,
 				F91DC8A91EA9899F00D60334 /* Assets.xcassets in Resources */,
 				F9BD43BC1EADF85600C3547B /* SideBar.xib in Resources */,
@@ -211,6 +248,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3BA24F9DF040D94FFA1BF729 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		494292F4B8152E99EE9A622D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-goodAgentiOS/Pods-goodAgentiOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9C2B57078E178022C788533 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-goodAgentiOS/Pods-goodAgentiOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F91DC89A1EA9899F00D60334 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -218,8 +303,10 @@
 			files = (
 				F91DC8A41EA9899F00D60334 /* initialVC.swift in Sources */,
 				F9BD43BA1EADF83700C3547B /* SideBar.swift in Sources */,
+				F96A98F01EB2EEFB00893009 /* MainSearchBarViewViewController.swift in Sources */,
 				F91DC8A21EA9899F00D60334 /* AppDelegate.swift in Sources */,
 				F9BD43BE1EAE013300C3547B /* SideBarViewController.swift in Sources */,
+				F956A4F81EB1CD1800920327 /* searchBar2.swift in Sources */,
 				F95B4E911EAEF25500547200 /* legacyCodes.txt in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,9 +448,11 @@
 		};
 		F91DC8BC1EA9899F00D60334 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 413A027FD2E46CA6A001BFE0 /* Pods-goodAgentiOS.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9BZEF6TDE4;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = goodAgentiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kalabash.goodAgentiOS;
@@ -375,9 +464,11 @@
 		};
 		F91DC8BD1EA9899F00D60334 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98683D1CE48CDCBBCA3AC261 /* Pods-goodAgentiOS.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9BZEF6TDE4;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = goodAgentiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kalabash.goodAgentiOS;

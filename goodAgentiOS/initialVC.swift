@@ -7,18 +7,23 @@
 //
 
 import UIKit
-
+import GoogleMaps
 
 class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     //MARK: - Properties
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var map: UIView!
+    
+    
+    var searchController:UISearchController!
     var searchActive : Bool = false
     var data = ["San Francisco","New York","San Jose","Chicago","Los Angeles","Austin","Seattle"]
     var filtered:[String] = []
+    let HQpos = [37.5466822, 127.0501807]
 
     //MARK: - Action: Call SideBar
     
@@ -29,14 +34,48 @@ class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         self.present(uvc, animated: false)
 
     }
+
+    //MARK: - Load GoogleMap
+    
+    override func loadView() {
+        let camera = GMSCameraPosition.camera(withLatitude: 37.5466822, longitude: 127.0501807, zoom: 15)
+        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+        mapView.isMyLocationEnabled = true
+        
+        self.view = mapView
+
+        
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: HQpos[0], longitude: HQpos[1])
+        marker.title = "6G HQ"
+        marker.snippet = "SeongDong"
+        marker.map = mapView
+        
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Setup delegates
-        tableView.delegate = self
-        tableView.dataSource = self
-        searchBar.delegate = self
+        if (tableView != nil) {
+            self.tableView.delegate = self
+            self.tableView.delegate = self
+            self.tableView.dataSource = self
+        }
+        
+        if (searchBar != nil) {
+            self.searchBar.delegate = self
+            self.view.addSubview(searchBar)
+            // Customzing searchBar
+            self.searchBar.layer.cornerRadius = 0
+
+        } else {
+            print("no search bar")
+        }
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -87,6 +126,9 @@ class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         } else {
             cell.textLabel?.text = data[indexPath.row]
         }
+        
+        cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row)"
+        
         return cell
     }
     
@@ -96,5 +138,11 @@ class initialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         }
         return data.count
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Section \(section)"
+    }
+    
+    
 
 }
